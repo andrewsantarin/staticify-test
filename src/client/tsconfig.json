@@ -27,6 +27,6 @@
   "include": [
     "../../types/**/*",
     "./**/*",
-    "client.tsx"
+    "scripts.tsx"
   ]
 }

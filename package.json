@@ -26,6 +26,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/send": "^0.14.5",
     "@types/shelljs": "^0.8.6",
+    "@types/wait-on": "^3.2.0",
     "concurrently": "^5.0.0",
     "nodemon": "^2.0.1",
     "open": "^7.0.0",
@@ -35,18 +36,21 @@
     "shelljs": "^0.8.3",
     "ts-node": "^8.5.2",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "wait-on": "^3.3.0"
   },
   "scripts": {
-    "build-server": "tsc",
     "watch-server": "ts-node-dev --inspect --project tsconfig.json -- src/index.ts",
-    "build-client": "parcel build src/client/client.tsx src/client/client.scss -d dist/public/client --public-url /static/client/",
-    "watch-client": "parcel watch src/client/client.tsx src/client/client.scss -d dist/public/client --public-url /static/client/",
-    "build-public": "ts-node scripts/build-public",
+    "build-server": "tsc",
+    "watch-client": "parcel watch src/client/styles.scss src/client/scripts.tsx -d dist/public/client --public-url /static/client/",
+    "build-client": "parcel build src/client/styles.scss src/client/scripts.tsx -d dist/public/client --public-url /static/client/",
     "watch-public": "nodemon --watch src/public -e jpg,png,ico,js,pug --exec yarn build-public",
-    "clean": "rimraf dist .cache",
+    "build-public": "ts-node scripts/build-public",
+    "open-browser": "ts-node scripts/open-browser",
     "build": "yarn build-server && yarn build-client && yarn build-public",
-    "watch": "cross-env NODE_ENV=development yarn clean && concurrently --kill-others --prefix \"[{name}]\" --names \"Client,Public,Server\" --prefix-colors \"blue,green,cyan\" \"yarn watch-client\" \"yarn watch-public\" \"yarn watch-server\"",
-    "start": "cross-env NODE_ENV=production node ."
+    "clean": "rimraf dist .cache .parcel-cache",
+    "debug": "cross-env NODE_ENV=development yarn clean && yarn watch",
+    "start": "cross-env NODE_ENV=production node .",
+    "watch": "concurrently -k -p \"{name}:\" -n \"Client,Public,Server,Browser\" -c \"blue,green,cyan,white\" \"yarn watch-client\" \"yarn watch-public\" \"yarn watch-server\""
   }
 }
