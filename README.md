@@ -61,7 +61,7 @@ yarn
 
 ### 4. _(optional)_ Change the running port
 
-By default, this project runs on `http://localhost:8080`. To change the port to another number, copy [**.env.example**](.env.example) into **.env** and set your preferred port number.
+By default, this project runs on `http://localhost:8080`. To change the port to another number, copy [`/.env.example`](.env.example) into **.env** and set your preferred port number.
 
 ```dotenv
 PORT=9090
@@ -83,7 +83,7 @@ With the help of TS-Node-Dev, the server runs on the TypeScript code. This compi
 yarn build && yarn start
 ```
 
-Compiles all TSX & SCSS code in [`/src`](./src) to JS & CSS and outputs them into [`dist`](./dist).
+Compiles all TSX & SCSS code in [`/src`](./src) to JS & CSS and outputs them into [`/dist`](./dist).
 
 ## To-Do
 
