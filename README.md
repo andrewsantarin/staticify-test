@@ -75,11 +75,15 @@ PORT=9090
 yarn debug
 ```
 
+With the help of TS-Node-Dev, the server runs on the TypeScript code. This compiles only [`/public`](./src/public) and [`/client`](./src/client) because Parcel watches them for changes instead of TS-Node-Dev.
+
 ### Production Mode
 
 ```sh
 yarn build && yarn start
 ```
+
+Compiles all TSX & SCSS code in [`/src`](./src) to JS & CSS and outputs them into [`dist`](./dist).
 
 ## To-Do
 
