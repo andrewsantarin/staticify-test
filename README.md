@@ -83,4 +83,4 @@ yarn build && yarn start
 
 ## To-Do
 
-[ ] Open the browser on the designated local port after the initial build completes when running [Development Mode](#development-mode), a la [`create-react-app`](https://github.com/facebook/create-react-app)'s `yarn start`.
+- Open the browser on the designated local port after the initial build completes when running [Development Mode](#development-mode), a la [`create-react-app`](https://github.com/facebook/create-react-app)'s `yarn start`.
