@@ -61,7 +61,7 @@ yarn
 
 ### 4. _(optional)_ Change the running port
 
-By default, this project runs on `http://localhost:8080`. To change the port to another number, copy [`/.env.example`](.env.example) into **.env** and set your preferred port number.
+By default, this project runs on `http://localhost:8080`. To change the port to another number, copy [`/.env.example`](.env.example) into [`/.env`](.env) and set your preferred port number.
 
 ```dotenv
 PORT=9090
